@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+      :root {
+        --lightBlue: hsl(215, 51%, 70%);
+        --cyan: hsl(178, 100%, 50%);
+        --cyanTransparent: hsl(178, 100%, 50%, 0.5);
+        --backgroundColour: hsl(217, 54%, 11%);
+        --backgroundColorCard: hsl(216, 50%, 16%);
+        --backgroundColorLine: hsl(215, 32%, 27%);
+        --font: "Outfit";
+        --bold: 600;
+        --light: 300;
+        --normal: 400;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      body {
+        background-color: var(--backgroundColour);
+        height: 100vh;
+        font-family: var(--font);
+        align-items: center;
+      }
+      .container {
+        background-color: var(--backgroundColorCard);
+        padding: 1rem;
+        border-radius: 10px;
+        align-items: center;
+        text-align: left;
+        box-shadow: rgba(33, 34, 34, 0.2) 0px 8px 24px;
+      }
+      .absolute {
+        position: absolute;
+        left: 38rem;
+        top: 7.2rem;
+        background-color: var(--cyanTransparent);
+        height: 305px;
+        width: 305px;
+        border-radius: 10px;
+        opacity: 0;
+        transition: 500ms all;
+        cursor: pointer;
+      }
+
+      .absolute img {
+        position: relative;
+        left: 4.75rem;
+        top: 4.5rem;
+      }
+      .nameOfNFT {
+        color: white;
+        font-weight: var(--bold);
+        font-size: 20px;
+        align-self: flex-start;
+        cursor: pointer;
+        transition: 500ms all;
+      }
+
+      .nameOfNFT:hover {
+        color: var(--cyan);
+      }
+      .description {
+        color: var(--lightBlue);
+        align-self: flex-start;
+        margin-bottom: 0rem;
+        margin-top: -0.5rem;
+      }
+      .containerTags {
+        display: flex;
+        align-items: flex-start;
+        align-self: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        border-bottom: 1px solid var(--backgroundColorLine);
+      }
+      .containerTags div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .containerTags div:first-child p {
+        color: var(--cyan);
+      }
+      .containerTags div:nth-child(2) p {
+        color: var(--lightBlue);
+      }
+      .nameOfOwner {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        align-self: flex-start;
+        color: white;
+        gap: 1rem;
+      }
+      .nameOfOwner img {
+        border: 1px solid white;
+        border-radius: 100%;
+      }
+      .nft {
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .container2:hover .absolute {
+        opacity: 1;
+      }
+      .nameOfOwner span {
+        color: var(--lightBlue);
+      }
+
+      .nameOfOwner span span {
+        color: white;
+        transition: 500ms all;
+        cursor: pointer;
+      }
+
+      .nameOfOwner span span:hover {
+        color: var(--cyan);
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <div class="container flex">
+      <div class="container2">
+        <img
+          src="/images/image-equilibrium.jpg"
+          alt=""
+          height="305"
+          width="305"
+          class="nft"
+        />
+        <div class="absolute">
+          <img
+            src="/images/icon-view.svg"
+            alt="viewing"
+            height="150"
+            width="150"
+          />
+        </div>
+      </div>
+
+      <p class="nameOfNFT">Equilibrium #3429</p>
+
+      <p class="description">
+        Our Equilibrium collection promotes<br />
+        balance and calm.
+      </p>
+
+      <div class="containerTags">
+        <div>
+          <img src="/images/icon-ethereum.svg" alt="Image of ETH" />
+          <p>0.041 ETH</p>
+        </div>
+        <div>
+          <img src="/images/icon-clock.svg" alt="Image of a clock" />
+          <p>3 days left</p>
+        </div>
+      </div>
+
+      <p class="nameOfOwner">
+        <img src="/images/image-avatar.png" height="25" width="25" />
+        <span>Creation Of <span>Jules Wyvern</span></span>
+      </p>
+    </div>
+  </body>
+</html>
